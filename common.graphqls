@@ -90,6 +90,7 @@ enum Scope {
     ServiceRelation
     ServiceInstanceRelation
     EndpointRelation
+    DatabaseAccess
 }
 
 enum DetectPoint {
