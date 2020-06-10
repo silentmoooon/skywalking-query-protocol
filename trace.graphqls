@@ -49,6 +49,12 @@ input TraceQueryCondition {
     paging: Pagination!
 }
 
+input TraceRangeCondition {
+    # The time range of traces started
+    queryDuration: Duration
+}
+
+
 enum TraceState {
     ALL
     SUCCESS
@@ -117,4 +123,5 @@ type LogEntity {
 extend type Query {
     queryBasicTraces(condition: TraceQueryCondition): TraceBrief
     queryTrace(traceId: ID!): Trace
+    queryTraceByTime(condition: Duration): [Trace!]!
 }
